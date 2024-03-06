@@ -139,6 +139,7 @@ p {
 
     .btn-submit {
         top: 120px;
+        right: -80%;
     }
 
     .input-container span {
