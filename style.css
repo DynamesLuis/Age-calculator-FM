@@ -1,0 +1,148 @@
+@import url('./assets/fonts/Poppins-Bold.ttf');
+@import url('./assets/fonts/Poppins-BoldItalic.ttf');
+@import url('./assets/fonts/Poppins-ExtraBold.ttf');
+@import url('./assets/fonts/Poppins-ExtraBoldItalic.ttf');
+@import url('./assets/fonts/Poppins-Italic.ttf');
+@import url('./assets/fonts/Poppins-Regular.ttf');
+
+:root {
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    background-color: var(--Off-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 90px 0;
+}
+
+section {
+    background-color: var(--White);
+    height: 75%;
+    width: 90%;
+    border-radius: 25px 25px 110px 25px;
+    padding: 50px 25px;
+    position: relative;
+}
+
+.inputs-wrap {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--Light-grey);
+    margin-bottom: 50px;
+}
+
+.input-container {
+    width: 30%;
+    & label {
+        color: var(--Smokey-grey);
+        font-weight: bold;
+    }
+
+    & input {
+        margin-top: 5px;
+        width: 100%;
+        height: 50px;
+        border-radius: 5px;
+        border: 1px solid var(--Light-grey);
+        font-size: 2rem;
+        font-weight: 900;
+        padding-left: 15px;
+    }
+
+    & span {
+        color: var(--Light-red);
+        text-align: center;
+        width: 100%;
+        display: block;
+        color: var(--Light-red);
+        visibility: hidden;
+    }
+}
+
+.btn-submit {
+    background-color: var(--Purple);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 135px;
+    border: none;
+    z-index: 2;
+    cursor: pointer;
+
+    &:hover {
+        background-color: hsl(259, 88%, 75%);
+    }
+
+    & img {
+        width: 30px;
+    }
+}
+
+p {
+    font-size: 4rem;
+    font-weight: 900;
+    & span {
+        color: var(--Purple);
+        &.fade-in-text {
+            animation: fadeIn 5s;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@media (min-width: 900px) {
+    body {
+        padding: 0;
+        justify-content: center;
+    }
+
+    section {
+        width: 900px;
+        height: 600PX;
+    }
+
+    .attribution {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .btn-submit {
+        top: 120px;
+    }
+
+    .input-container span {
+        text-align: start;
+        margin-top: 5px;
+    } 
+}
